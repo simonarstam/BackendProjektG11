@@ -191,7 +191,6 @@ namespace DAL
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-
                         ToDo toDo = new ToDo();
                         toDo.Id = reader.GetInt32(reader.GetOrdinal("ID"));
                         toDo.Description = reader.GetString(reader.GetOrdinal("Description"));

@@ -13,6 +13,7 @@ namespace ConsoleApplication1
             Console.WriteLine("Test");
             WfcService1.Service1Client client = new WfcService1.Service1Client();
             Console.WriteLine(client.GetData(4));
+
             client.Close();
             Console.ReadKey();
         }
