@@ -1,0 +1,5 @@
+c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\WcfService1\bin\WcfService1.dll.config
+c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\WcfService1\bin\WcfService1.dll
+c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\WcfService1\bin\WcfService1.pdb
+c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\WcfService1\obj\Debug\WcfService1.dll
+c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\WcfService1\obj\Debug\WcfService1.pdb
