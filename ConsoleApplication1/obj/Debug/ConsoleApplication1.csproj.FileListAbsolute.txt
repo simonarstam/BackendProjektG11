@@ -4,3 +4,4 @@ c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\ConsoleAp
 c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
 c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\simon\documents\visual studio 2015\Projects\BackendProjektG11\ConsoleApplication1\bin\Debug\Basklass.pdb

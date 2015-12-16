@@ -3,3 +3,8 @@ c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\WcfServic
 c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\WcfService1\bin\WcfService1.pdb
 c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\WcfService1\obj\Debug\WcfService1.dll
 c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\WcfService1\obj\Debug\WcfService1.pdb
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\WcfService1\bin\ClassLibrary1.dll
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\WcfService1\bin\Basklass.dll
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\WcfService1\bin\ClassLibrary1.pdb
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\WcfService1\bin\Basklass.pdb
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\WcfService1\obj\Debug\WcfService1.csprojResolveAssemblyReference.cache
