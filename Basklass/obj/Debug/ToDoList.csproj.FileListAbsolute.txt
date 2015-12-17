@@ -1,0 +1,10 @@
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\Basklass\bin\Debug\Basklass.dll
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\Basklass\bin\Debug\Basklass.pdb
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\Basklass\obj\Debug\ToDoList.csprojResolveAssemblyReference.cache
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\Basklass\obj\Debug\Basklass.dll
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\Basklass\obj\Debug\Basklass.pdb
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\Basklass\bin\Debug\Basklass.dll
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\Basklass\bin\Debug\Basklass.pdb
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\Basklass\obj\Debug\ToDoList.csprojResolveAssemblyReference.cache
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\Basklass\obj\Debug\Basklass.dll
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\Basklass\obj\Debug\Basklass.pdb

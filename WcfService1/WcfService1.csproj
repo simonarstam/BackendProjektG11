@@ -85,6 +85,16 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Basklass\ToDoList.csproj">
+      <Project>{1b1166bf-a778-47a6-984d-f1e7a8604852}</Project>
+      <Name>ToDoList</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibrary1\DAL.csproj">
+      <Project>{2f9e64cf-cbbc-44c1-99a9-78938da7c767}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -8,28 +8,84 @@ using System.Text;
 
 namespace WcfService1
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        private DAL.DAL m_dal = new DAL.DAL("Server=ServerName;Database=DataBaseName;UID=username;Password=password");
+        static string conn =//@"Data Source = 127.,1433; Initial Catalog = DB_ToDoList; User ID = RestFullUser; Password = RestFull123;";
+                           @"Data Source = 31.186.250.81,1433; Initial Catalog = DB_ToDoList; User ID = test2; Password = test123; Trusted_Connection=false;";
+        static DAL.DAL dal = new DAL.DAL(conn);
 
-        public string GetData(int value)
+
+        public string[] getTheListString()
         {
-            return string.Format("You entered: {0}", value);
+            //
+            List<ToDoList.ToDo> theToDoList = new List<ToDoList.ToDo>();
+            theToDoList = dal.GetToDoList();
+            theToDoList = theToDoList.OrderBy(x => x.DeadLine).ToList();
+            //
+
+            List<string> temp = new List<string>();
+            foreach (ToDoList.ToDo td in theToDoList)
+                temp.Add(td.Id + " " + td.Description + " " + td.Name + " " + td.DeadLine + " " + td.EstimationTime + " " + td.Finnished);
+            return temp.ToArray();
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dal"></param>
+        public void addToDo(string description, string name, DateTime dm, int estimationTime, bool finnished)
         {
-            if (composite == null)
+            ToDoList.ToDo td = new ToDoList.ToDo();
+         
+            td.Description = description;
+            td.Name = name;
+            td.DeadLine = dm;
+            td.CreatedDate = System.DateTime.Now;
+            td.EstimationTime = estimationTime;
+            td.Finnished = finnished;
+
+            dal.AddToDo(td);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dal"></param>
+        public bool removeToDo(int id)
+        {
+            try
             {
-                throw new ArgumentNullException("composite");
+                //Console.Write("Select ID: ");
+                ToDoList.ToDo td = new ToDoList.ToDo();
+                int count = dal.GetToDoList().Count();
+                //string choice = Console.ReadLine();
+                if (id < count)
+                {
+                    List<ToDoList.ToDo> temp = dal.GetToDoListById(id);
+
+                    if (temp.Count > 0)
+                    {
+                        dal.DeleteToDoList(id);
+                        Console.WriteLine(temp.ElementAt(0).Id + " has been deleted.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nothing happend");
+                        return false;
+                    }
+
+
+                }
             }
-            if (composite.BoolValue)
+            catch (Exception ex)
             {
-                composite.StringValue += "Suffix";
+                Console.WriteLine(ex);
+                return false;
             }
-            return composite;
+            return true;
         }
     }
 }

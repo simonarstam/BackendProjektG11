@@ -3,3 +3,28 @@ c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\WcfServic
 c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\WcfService1\bin\WcfService1.pdb
 c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\WcfService1\obj\Debug\WcfService1.dll
 c:\users\simon\documents\visual studio 2015\Projects\BackendProjektG11\WcfService1\obj\Debug\WcfService1.pdb
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\WcfService1\bin\ClassLibrary1.dll
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\WcfService1\bin\Basklass.dll
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\WcfService1\bin\ClassLibrary1.pdb
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\WcfService1\bin\Basklass.pdb
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\WcfService1\obj\Debug\WcfService1.csprojResolveAssemblyReference.cache
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\WcfService1\bin\WcfService1.dll.config
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\WcfService1\bin\WcfService1.dll
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\WcfService1\bin\WcfService1.pdb
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\WcfService1\bin\Basklass.dll
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\WcfService1\bin\ClassLibrary1.dll
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\WcfService1\bin\Basklass.pdb
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\WcfService1\bin\ClassLibrary1.pdb
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\WcfService1\obj\Debug\WcfService1.csprojResolveAssemblyReference.cache
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\WcfService1\obj\Debug\WcfService1.dll
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\WcfService1\obj\Debug\WcfService1.pdb
+D:\Git\BackendProjektG11\WcfService1\bin\WcfService1.dll.config
+D:\Git\BackendProjektG11\WcfService1\bin\WcfService1.dll
+D:\Git\BackendProjektG11\WcfService1\bin\WcfService1.pdb
+D:\Git\BackendProjektG11\WcfService1\bin\Basklass.dll
+D:\Git\BackendProjektG11\WcfService1\bin\ClassLibrary1.dll
+D:\Git\BackendProjektG11\WcfService1\bin\Basklass.pdb
+D:\Git\BackendProjektG11\WcfService1\bin\ClassLibrary1.pdb
+D:\Git\BackendProjektG11\WcfService1\obj\Debug\WcfService1.csprojResolveAssemblyReference.cache
+D:\Git\BackendProjektG11\WcfService1\obj\Debug\WcfService1.dll
+D:\Git\BackendProjektG11\WcfService1\obj\Debug\WcfService1.pdb
