@@ -53,15 +53,52 @@ namespace ConsoleApplication1
 
                         Console.WriteLine("How much time is gone take to do the jobb?");
                         int estimationTime;
-                        bool intEstimationTime = int.TryParse(Console.ReadLine(), out estimationTime);
+                        string stringEstimationTime = Console.ReadLine();
+                        while (!int.TryParse(stringEstimationTime, out estimationTime))
+                        {
+                            Console.WriteLine(Environment.NewLine + " It has to be a number");
+                            Console.Write(Environment.NewLine);
+                            stringEstimationTime = Console.ReadLine();
+                        }
+
 
                         Console.WriteLine("When the jobb should be done? Year");
                         int year;
-                        bool intYear = int.TryParse(Console.ReadLine(), out year);
+                        string stringYear = Console.ReadLine();
+                        while (!int.TryParse(stringYear, out year))
+                        {
+                            Console.WriteLine(Environment.NewLine + " It has to be a number max 9999");
+                            Console.Write(Environment.NewLine);
+                            stringYear = Console.ReadLine();
+                        }
+
+                        while (year <= 0 || year >= 10000)
+                        {
+                            Console.WriteLine(Environment.NewLine + " It has to be a number max 9999");
+                            Console.Write(Environment.NewLine);
+                            stringYear = Console.ReadLine();
+                            int.TryParse(stringYear, out year);
+                        }
+                      
+
                         Console.WriteLine("When the jobb should be done? Month");
                         int month;
+                        string stringMonth = Console.ReadLine();
+                        while (!int.TryParse(stringMonth, out month))
+                        {
+                            Console.WriteLine(Environment.NewLine + " It has to be a number between 1 and 12");
+                            Console.Write(Environment.NewLine);
+                            stringMonth = Console.ReadLine();
+                        }
 
-                        bool intMonth = int.TryParse(Console.ReadLine(), out month);
+                        while (month <= 0 || month >= 13)
+                        {
+                            Console.WriteLine(Environment.NewLine + " It has to be a number between 1 and 12");
+                            Console.Write(Environment.NewLine);
+                            stringMonth = Console.ReadLine();
+                            int.TryParse(stringMonth, out month);
+                        }
+
                         Console.WriteLine("When the jobb should be done? Day");
                         int day;
                         string stringDay = Console.ReadLine();
@@ -79,7 +116,8 @@ namespace ConsoleApplication1
                             stringDay = Console.ReadLine();
                             int.TryParse(stringDay, out day);
                         }
-                            DateTime dm = new DateTime(year, month, day, 12, 5, 13);
+                        var time = DateTime.Now;
+                            DateTime dm = new DateTime(year, month, day, time.Hour, time.Minute, time.Second);
 
                         Console.WriteLine("Is the jobb finished or not? \n 1 for true and 0 for false");
                         string stringFinnished = Console.ReadLine();
