@@ -88,16 +88,17 @@ namespace WcfService1
             return true;
         }
 
-        //public bool FinnishedToDo(int id)
-        //{
-        //    ToDoList.ToDo td = new ToDoList.ToDo();
+        public List<ToDoList.ToDo> FinishedItemsToDo()
+        {
+            List<ToDoList.ToDo> theToDoList = new List<ToDoList.ToDo>();
+            theToDoList = dal.GetToDoList();
+            List<ToDoList.ToDo> finishedItems = theToDoList.FindAll(finished => finished.Finnished);
+            return finishedItems;
 
-
-        //}
+        }
 
         public int[] GetListFinishedAndUnfinished()
         {
-            //ToDoList.ToDo td = new ToDoList.ToDo();
             List<ToDoList.ToDo> theToDoList = new List<ToDoList.ToDo>();
             theToDoList = dal.GetToDoList();
             List<ToDoList.ToDo> finished = theToDoList.FindAll(final => final.Finnished );

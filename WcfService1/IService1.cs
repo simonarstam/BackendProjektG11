@@ -21,10 +21,12 @@ namespace WcfService1
         [OperationContract]
         void addToDo(string description, string name, DateTime CreatedDate, DateTime dm, int estimationTime, bool finnished);
 
-        //[OperationContract]
-        //bool FinnishedToDO(int id);
+        [OperationContract]
+        List<ToDoList.ToDo> FinishedItemsToDO();
 
         [OperationContract]
         int [] GetListFinishedAndUnfinished();
+
+
     }
 }

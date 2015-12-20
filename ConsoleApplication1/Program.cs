@@ -31,6 +31,7 @@ namespace ConsoleApplication1
                 Console.WriteLine("2. Add");
                 Console.WriteLine("3. Remove");
                 Console.WriteLine("4. Get the number of finished or unfinished toDos");
+                Console.WriteLine("5. Show the list with the finished items");
                 Console.Write(">> ");
                 string choice = Console.ReadLine();
 
@@ -159,6 +160,14 @@ namespace ConsoleApplication1
                             Console.WriteLine("\n The number of finished items is {0} and the number of unfinished items is {1} ", idQuantity[0], idQuantity[1] + "\n");
                         //}
                             break;
+
+                    case "5":
+                        foreach(string s in client.FinishedItemsToDo())
+                        {
+                            Console.WriteLine(s);
+
+                        }
+                        break;
 
                     default:
                         Console.WriteLine("Invalid choice...");
