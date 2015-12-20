@@ -32,6 +32,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
         <xs:element minOccurs="0" name="dm" type="xs:dateTime" />
         <xs:element minOccurs="0" name="estimationTime" type="xs:int" />
         <xs:element minOccurs="0" name="finnished" type="xs:boolean" />

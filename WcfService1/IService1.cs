@@ -19,7 +19,7 @@ namespace WcfService1
         bool removeToDo(int id);
 
         [OperationContract]
-        void addToDo(string description, string name, DateTime dm, int estimationTime, bool finnished);
+        void addToDo(string description, string name, DateTime CreatedDate, DateTime dm, int estimationTime, bool finnished);
 
         //[OperationContract]
         //bool FinnishedToDO(int id);

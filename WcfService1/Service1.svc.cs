@@ -25,7 +25,7 @@ namespace WcfService1
 
             List<string> temp = new List<string>();
             foreach (ToDoList.ToDo td in theToDoList)
-                temp.Add(td.Id + " " + td.Description + " " + td.Name + " " + td.DeadLine + " " + td.EstimationTime + " " + td.Finnished);
+                temp.Add(td.Id + " " + td.Description + " " + td.Name + " " +td.CreatedDate + " " + td.DeadLine + " " + td.EstimationTime + " " + td.Finnished);
             return temp.ToArray();
         }
 
@@ -34,14 +34,14 @@ namespace WcfService1
         /// 
         /// </summary>
         /// <param name="dal"></param>
-        public void addToDo(string description, string name, DateTime dm, int estimationTime, bool finnished)
+        public void addToDo(string description, string name, DateTime CreatedDate, DateTime dm, int estimationTime, bool finnished)
         {
             ToDoList.ToDo td = new ToDoList.ToDo();
          
             td.Description = description;
             td.Name = name;
             td.DeadLine = dm;
-            td.CreatedDate = System.DateTime.Now;
+            td.CreatedDate = CreatedDate;
             td.EstimationTime = estimationTime;
             td.Finnished = finnished;
 

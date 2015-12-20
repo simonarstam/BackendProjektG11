@@ -28,10 +28,10 @@ namespace ConsoleApplication1.ServiceReference1 {
         System.Threading.Tasks.Task<bool> removeToDoAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addToDo", ReplyAction="http://tempuri.org/IService1/addToDoResponse")]
-        void addToDo(string description, string name, System.DateTime dm, int estimationTime, bool finnished);
+        void addToDo(string description, string name, System.DateTime CreatedDate, System.DateTime dm, int estimationTime, bool finnished);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addToDo", ReplyAction="http://tempuri.org/IService1/addToDoResponse")]
-        System.Threading.Tasks.Task addToDoAsync(string description, string name, System.DateTime dm, int estimationTime, bool finnished);
+        System.Threading.Tasks.Task addToDoAsync(string description, string name, System.DateTime CreatedDate, System.DateTime dm, int estimationTime, bool finnished);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListFinishedAndUnfinished", ReplyAction="http://tempuri.org/IService1/GetListFinishedAndUnfinishedResponse")]
         int[] GetListFinishedAndUnfinished();
@@ -83,12 +83,12 @@ namespace ConsoleApplication1.ServiceReference1 {
             return base.Channel.removeToDoAsync(id);
         }
         
-        public void addToDo(string description, string name, System.DateTime dm, int estimationTime, bool finnished) {
-            base.Channel.addToDo(description, name, dm, estimationTime, finnished);
+        public void addToDo(string description, string name, System.DateTime CreatedDate, System.DateTime dm, int estimationTime, bool finnished) {
+            base.Channel.addToDo(description, name, CreatedDate, dm, estimationTime, finnished);
         }
         
-        public System.Threading.Tasks.Task addToDoAsync(string description, string name, System.DateTime dm, int estimationTime, bool finnished) {
-            return base.Channel.addToDoAsync(description, name, dm, estimationTime, finnished);
+        public System.Threading.Tasks.Task addToDoAsync(string description, string name, System.DateTime CreatedDate, System.DateTime dm, int estimationTime, bool finnished) {
+            return base.Channel.addToDoAsync(description, name, CreatedDate, dm, estimationTime, finnished);
         }
         
         public int[] GetListFinishedAndUnfinished() {

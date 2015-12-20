@@ -134,8 +134,8 @@ namespace ConsoleApplication1
                                 finnished = false;
                                 break;
                         }
-
-                        client.addToDo(description, name, dm, estimationTime, finnished);
+                        DateTime createdDate = System.DateTime.Now;
+                        client.addToDo(description, name, createdDate, dm, estimationTime, finnished);
 
                         break;
 
