@@ -115,7 +115,7 @@ namespace ConsoleApplication1
                         break;
 
                     case "4":
-                        int[] idQuantity = client.GetListFinishedAndUnfinished();
+                        int[] idQuantity = client.GetQuantityFinishedAndUnfinished();
                         //foreach (int i in idQuantity)
                         //{
                             Console.WriteLine("\n The number of finished items is {0} and the number of unfinished items is {1} ", idQuantity[0], idQuantity[1] + "\n");

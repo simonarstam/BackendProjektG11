@@ -95,7 +95,7 @@ namespace WcfService1
 
         //}
 
-        public int[] GetListFinishedAndUnfinished()
+        public int[] GetQuantityFinishedAndUnfinished()
         {
             //ToDoList.ToDo td = new ToDoList.ToDo();
             List<ToDoList.ToDo> theToDoList = new List<ToDoList.ToDo>();
@@ -104,8 +104,8 @@ namespace WcfService1
             int countFinished = finished.Count();
             List<ToDoList.ToDo> unfinished = theToDoList.FindAll(final => !final.Finnished);
             int countUnfinished = unfinished.Count();
-            int[] getListFinishedAndUnfinished = new int[] { countFinished, countUnfinished };
-            return getListFinishedAndUnfinished;
+            int[] getQuantityFinishedAndUnfinished = new int[] { countFinished, countUnfinished };
+            return getQuantityFinishedAndUnfinished;
         }
     }
 }

@@ -25,6 +25,6 @@ namespace WcfService1
         //bool FinnishedToDO(int id);
 
         [OperationContract]
-        int [] GetListFinishedAndUnfinished();
+        int [] GetQuantityFinishedAndUnfinished();
     }
 }
