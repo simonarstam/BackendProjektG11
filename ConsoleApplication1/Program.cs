@@ -30,6 +30,7 @@ namespace ConsoleApplication1
                 Console.WriteLine("1. List whole TodoList");
                 Console.WriteLine("2. Add");
                 Console.WriteLine("3. Remove");
+                Console.WriteLine("4. Get the number of finished or unfinished toDos");
                 Console.Write(">> ");
                 string choice = Console.ReadLine();
 
@@ -113,9 +114,19 @@ namespace ConsoleApplication1
                         client.removeToDo(id);
                         break;
 
+                    case "4":
+                        int[] idQuantity = client.GetListFinishedAndUnfinished();
+                        //foreach (int i in idQuantity)
+                        //{
+                            Console.WriteLine("\n The number of finished items is {0} and the number of unfinished items is {1} ", idQuantity[0], idQuantity[1] + "\n");
+                        //}
+                            break;
+
                     default:
                         Console.WriteLine("Invalid choice...");
                         break;
+
+                   
                 }
             }
             //client.Close();

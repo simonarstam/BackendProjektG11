@@ -87,5 +87,25 @@ namespace WcfService1
             }
             return true;
         }
+
+        //public bool FinnishedToDo(int id)
+        //{
+        //    ToDoList.ToDo td = new ToDoList.ToDo();
+
+
+        //}
+
+        public int[] GetListFinishedAndUnfinished()
+        {
+            //ToDoList.ToDo td = new ToDoList.ToDo();
+            List<ToDoList.ToDo> theToDoList = new List<ToDoList.ToDo>();
+            theToDoList = dal.GetToDoList();
+            List<ToDoList.ToDo> finished = theToDoList.FindAll(final => final.Finnished );
+            int countFinished = finished.Count();
+            List<ToDoList.ToDo> unfinished = theToDoList.FindAll(final => !final.Finnished);
+            int countUnfinished = unfinished.Count();
+            int[] getListFinishedAndUnfinished = new int[] { countFinished, countUnfinished };
+            return getListFinishedAndUnfinished;
+        }
     }
 }

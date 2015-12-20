@@ -32,6 +32,12 @@ namespace ConsoleApplication1.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addToDo", ReplyAction="http://tempuri.org/IService1/addToDoResponse")]
         System.Threading.Tasks.Task addToDoAsync(string description, string name, System.DateTime dm, int estimationTime, bool finnished);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListFinishedAndUnfinished", ReplyAction="http://tempuri.org/IService1/GetListFinishedAndUnfinishedResponse")]
+        int[] GetListFinishedAndUnfinished();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListFinishedAndUnfinished", ReplyAction="http://tempuri.org/IService1/GetListFinishedAndUnfinishedResponse")]
+        System.Threading.Tasks.Task<int[]> GetListFinishedAndUnfinishedAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +89,14 @@ namespace ConsoleApplication1.ServiceReference1 {
         
         public System.Threading.Tasks.Task addToDoAsync(string description, string name, System.DateTime dm, int estimationTime, bool finnished) {
             return base.Channel.addToDoAsync(description, name, dm, estimationTime, finnished);
+        }
+        
+        public int[] GetListFinishedAndUnfinished() {
+            return base.Channel.GetListFinishedAndUnfinished();
+        }
+        
+        public System.Threading.Tasks.Task<int[]> GetListFinishedAndUnfinishedAsync() {
+            return base.Channel.GetListFinishedAndUnfinishedAsync();
         }
     }
 }
