@@ -25,6 +25,12 @@
   <wsdl:message name="IService1_addToDo_OutputMessage">
     <wsdl:part name="parameters" element="tns:addToDoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_FinishedItemsToDo_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishedItemsToDo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FinishedItemsToDo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishedItemsToDoResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetListFinishedAndUnfinished_InputMessage">
     <wsdl:part name="parameters" element="tns:GetListFinishedAndUnfinished" />
   </wsdl:message>
@@ -43,6 +49,10 @@
     <wsdl:operation name="addToDo">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addToDo" message="tns:IService1_addToDo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addToDoResponse" message="tns:IService1_addToDo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishedItemsToDo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/FinishedItemsToDo" message="tns:IService1_FinishedItemsToDo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/FinishedItemsToDoResponse" message="tns:IService1_FinishedItemsToDo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetListFinishedAndUnfinished">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListFinishedAndUnfinished" message="tns:IService1_GetListFinishedAndUnfinished_InputMessage" />
@@ -71,6 +81,15 @@
     </wsdl:operation>
     <wsdl:operation name="addToDo">
       <soap:operation soapAction="http://tempuri.org/IService1/addToDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishedItemsToDo">
+      <soap:operation soapAction="http://tempuri.org/IService1/FinishedItemsToDo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -88,12 +88,19 @@ namespace WcfService1
             return true;
         }
 
-        public List<ToDoList.ToDo> FinishedItemsToDo()
+        public string[] FinishedItemsToDo()
         {
             List<ToDoList.ToDo> theToDoList = new List<ToDoList.ToDo>();
             theToDoList = dal.GetToDoList();
             List<ToDoList.ToDo> finishedItems = theToDoList.FindAll(finished => finished.Finnished);
-            return finishedItems;
+
+            List<string> listToArray = new List<string>();
+            foreach (ToDoList.ToDo td in finishedItems) 
+                {
+                    listToArray.Add(td.Id + " " + td.Description + " " + td.Name + " " + td.CreatedDate + " " + td.DeadLine + " " + td.EstimationTime + " " + td.Finnished);
+                }
+            return listToArray.ToArray();
+            
 
         }
 

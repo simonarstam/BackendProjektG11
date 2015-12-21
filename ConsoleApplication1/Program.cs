@@ -27,13 +27,14 @@ namespace ConsoleApplication1
                 ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
             while (true)
             {
-                Console.WriteLine("1. List whole TodoList");
+                Console.WriteLine("\n1. List whole TodoList");
                 Console.WriteLine("2. Add");
                 Console.WriteLine("3. Remove");
                 Console.WriteLine("4. Get the number of finished or unfinished toDos");
                 Console.WriteLine("5. Show the list with the finished items");
                 Console.Write(">> ");
                 string choice = Console.ReadLine();
+                Console.WriteLine("\n");
 
 
                 switch (choice)
@@ -162,10 +163,9 @@ namespace ConsoleApplication1
                             break;
 
                     case "5":
-                        foreach(string s in client.FinishedItemsToDo())
+                        foreach (string s in client.FinishedItemsToDo())
                         {
                             Console.WriteLine(s);
-
                         }
                         break;
 

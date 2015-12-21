@@ -22,7 +22,7 @@ namespace WcfService1
         void addToDo(string description, string name, DateTime CreatedDate, DateTime dm, int estimationTime, bool finnished);
 
         [OperationContract]
-        List<ToDoList.ToDo> FinishedItemsToDO();
+        string[] FinishedItemsToDo();
 
         [OperationContract]
         int [] GetListFinishedAndUnfinished();
