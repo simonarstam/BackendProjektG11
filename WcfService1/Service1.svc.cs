@@ -95,6 +95,7 @@ namespace WcfService1
                 
                 //Console.Write("Select ID: ");
                 ToDoList.ToDo td = new ToDoList.ToDo();
+                td.Id = idUpdate;
                 td.Description = descriptionUpdate;
                 td.Name = nameUpdate;
                 td.DeadLine = dmUpdate;
@@ -111,7 +112,7 @@ namespace WcfService1
                     if (temp.Count > 0)
                     {
                         dal.UpdateToDoList(td);
-                        Console.WriteLine(temp.ElementAt(0).Id + " has been deleted.");
+                        Console.WriteLine(temp.ElementAt(0).Id + " has been updated.");
                     }
                     else
                     {

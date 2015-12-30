@@ -44,6 +44,12 @@ namespace ConsoleApplication1.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListFinishedAndUnfinished", ReplyAction="http://tempuri.org/IService1/GetListFinishedAndUnfinishedResponse")]
         System.Threading.Tasks.Task<int[]> GetListFinishedAndUnfinishedAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateToDo", ReplyAction="http://tempuri.org/IService1/UpdateToDoResponse")]
+        bool UpdateToDo(int idUpdate, string descriptionUpdate, string nameUpdate, System.DateTime CreatedDateUpdate, System.DateTime dmUpdate, int estimationTimeUpdate, bool finnishedUpdate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateToDo", ReplyAction="http://tempuri.org/IService1/UpdateToDoResponse")]
+        System.Threading.Tasks.Task<bool> UpdateToDoAsync(int idUpdate, string descriptionUpdate, string nameUpdate, System.DateTime CreatedDateUpdate, System.DateTime dmUpdate, int estimationTimeUpdate, bool finnishedUpdate);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -111,6 +117,14 @@ namespace ConsoleApplication1.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int[]> GetListFinishedAndUnfinishedAsync() {
             return base.Channel.GetListFinishedAndUnfinishedAsync();
+        }
+        
+        public bool UpdateToDo(int idUpdate, string descriptionUpdate, string nameUpdate, System.DateTime CreatedDateUpdate, System.DateTime dmUpdate, int estimationTimeUpdate, bool finnishedUpdate) {
+            return base.Channel.UpdateToDo(idUpdate, descriptionUpdate, nameUpdate, CreatedDateUpdate, dmUpdate, estimationTimeUpdate, finnishedUpdate);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateToDoAsync(int idUpdate, string descriptionUpdate, string nameUpdate, System.DateTime CreatedDateUpdate, System.DateTime dmUpdate, int estimationTimeUpdate, bool finnishedUpdate) {
+            return base.Channel.UpdateToDoAsync(idUpdate, descriptionUpdate, nameUpdate, CreatedDateUpdate, dmUpdate, estimationTimeUpdate, finnishedUpdate);
         }
     }
 }
