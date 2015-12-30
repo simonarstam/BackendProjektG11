@@ -32,6 +32,7 @@ namespace ConsoleApplication1
                 Console.WriteLine("3. Remove");
                 Console.WriteLine("4. Get the number of finished or unfinished toDos");
                 Console.WriteLine("5. Show the list with the finished items");
+                Console.WriteLine("6. Change item");
                 Console.Write(">> ");
                 string choice = Console.ReadLine();
                 Console.WriteLine("\n");
