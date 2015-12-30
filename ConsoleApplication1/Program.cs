@@ -152,6 +152,7 @@ namespace ConsoleApplication1
                             stringId = Console.ReadLine();
                         }
                         client.removeToDo(id);
+                        
                         break;
 
                     case "4":
@@ -173,7 +174,114 @@ namespace ConsoleApplication1
                         Console.WriteLine("Invalid choice...");
                         break;
 
-                   
+                    case "6":
+
+                        int idUpdate;
+                        Console.WriteLine("Select ID:");
+                        string stringIdUpdate = Console.ReadLine();
+                        while (!int.TryParse(stringIdUpdate, out idUpdate))
+                        {
+                            Console.WriteLine(Environment.NewLine + " Choose a number");
+                            Console.Write(Environment.NewLine);
+                            stringId = Console.ReadLine();
+                        }
+                        //client.removeToDo(id);
+
+                        Console.WriteLine("What do you want to do?");
+                        string descriptionUpdate = Console.ReadLine();
+
+                        Console.WriteLine("Who is going to do the jobb?");
+                        string nameUpdate = Console.ReadLine();
+
+                        Console.WriteLine("How much time is gone take to do the jobb?");
+                        int estimationTimeUpdate;
+                        string stringEstimationTimeUpdate = Console.ReadLine();
+                        while (!int.TryParse(stringEstimationTimeUpdate, out estimationTimeUpdate))
+                        {
+                            Console.WriteLine(Environment.NewLine + " It has to be a number");
+                            Console.Write(Environment.NewLine);
+                            stringEstimationTime = Console.ReadLine();
+                        }
+
+
+                        Console.WriteLine("When the jobb should be done? Year");
+                        int yearUpdate;
+                        string stringYearUpdate = Console.ReadLine();
+                        while (!int.TryParse(stringYearUpdate, out year))
+                        {
+                            Console.WriteLine(Environment.NewLine + " It has to be a number max 9999");
+                            Console.Write(Environment.NewLine);
+                            stringYear = Console.ReadLine();
+                        }
+
+                        while (year <= 0 || year >= 10000)
+                        {
+                            Console.WriteLine(Environment.NewLine + " It has to be a number max 9999");
+                            Console.Write(Environment.NewLine);
+                            stringYear = Console.ReadLine();
+                            int.TryParse(stringYear, out year);
+                        }
+
+
+                        Console.WriteLine("When the jobb should be done? Month");
+                        int monthUpdate;
+                        string stringMonthUpdate = Console.ReadLine();
+                        while (!int.TryParse(stringMonthUpdate, out month))
+                        {
+                            Console.WriteLine(Environment.NewLine + " It has to be a number between 1 and 12");
+                            Console.Write(Environment.NewLine);
+                            stringMonth = Console.ReadLine();
+                        }
+
+                        while (month <= 0 || month >= 13)
+                        {
+                            Console.WriteLine(Environment.NewLine + " It has to be a number between 1 and 12");
+                            Console.Write(Environment.NewLine);
+                            stringMonth = Console.ReadLine();
+                            int.TryParse(stringMonth, out month);
+                        }
+
+                        Console.WriteLine("When the jobb should be done? Day");
+                        int dayUpdate;
+                        string stringDayUpdate = Console.ReadLine();
+                        while (!int.TryParse(stringDayUpdate, out day))
+                        {
+                            Console.WriteLine(Environment.NewLine + " It has to be a number between 1 and 31");
+                            Console.Write(Environment.NewLine);
+                            stringDay = Console.ReadLine();
+                        }
+
+                        while (day <= 0 || day >= 31)
+                        {
+                            Console.WriteLine(Environment.NewLine + " It has to be a number between 1 and 31");
+                            Console.Write(Environment.NewLine);
+                            stringDay = Console.ReadLine();
+                            int.TryParse(stringDay, out day);
+                        }
+                        var timeUpdate = DateTime.Now;
+                        DateTime dmUpdate = new DateTime(year, month, day, timeUpdate.Hour, timeUpdate.Minute, timeUpdate.Second);
+
+                        Console.WriteLine("Is the jobb finished or not? \n 1 for true and 0 for false");
+                        string stringFinnishedUpdate = Console.ReadLine();
+                        bool finnishedUpdate = true;
+
+                        switch (stringFinnishedUpdate)
+                        {
+                            case "1":
+                                finnished = true;
+                                Console.WriteLine(finnished);
+                                break;
+
+                            case "0":
+                                finnished = false;
+                                break;
+                        }
+                        DateTime createdDateUpdate = System.DateTime.Now;
+                        client.UpdateToDo(idUpdate, descriptionUpdate, nameUpdate, createdDateUpdate, dmUpdate, estimationTimeUpdate, finnishedUpdate);
+
+                        break;
+
+
                 }
             }
             //client.Close();

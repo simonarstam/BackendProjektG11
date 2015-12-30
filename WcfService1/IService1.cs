@@ -27,6 +27,9 @@ namespace WcfService1
         [OperationContract]
         int [] GetListFinishedAndUnfinished();
 
+        [OperationContract]
+        bool UpdateToDo(int idUpdate, string descriptionUpdate, string nameUpdate, DateTime CreatedDateUpdate, DateTime dmUpdate, int estimationTimeUpdate, bool finnishedUpdate);
+
 
     }
 }

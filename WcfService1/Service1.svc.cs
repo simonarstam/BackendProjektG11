@@ -88,6 +88,50 @@ namespace WcfService1
             return true;
         }
 
+        public bool UpdateToDo(int idUpdate, string descriptionUpdate, string nameUpdate, DateTime CreatedDateUpdate, DateTime dmUpdate, int estimationTimeUpdate, bool finnishedUpdate)
+        {
+            try
+            {
+                
+                //Console.Write("Select ID: ");
+                ToDoList.ToDo td = new ToDoList.ToDo();
+                td.Description = descriptionUpdate;
+                td.Name = nameUpdate;
+                td.DeadLine = dmUpdate;
+                td.CreatedDate = CreatedDateUpdate;
+                td.EstimationTime = estimationTimeUpdate;
+                td.Finnished = finnishedUpdate;
+
+                int count = dal.GetToDoList().Count();
+                //string choice = Console.ReadLine();
+                if (idUpdate < count)
+                {
+                    List<ToDoList.ToDo> temp = dal.GetToDoListById(idUpdate);
+
+                    if (temp.Count > 0)
+                    {
+                        dal.UpdateToDoList(td);
+                        Console.WriteLine(temp.ElementAt(0).Id + " has been deleted.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nothing happend");
+                        return false;
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+            return true;
+        }
+
+
+
         public string[] FinishedItemsToDo()
         {
             List<ToDoList.ToDo> theToDoList = new List<ToDoList.ToDo>();
