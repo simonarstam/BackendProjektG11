@@ -1,0 +1,14 @@
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\Basklass\bin\Debug\Basklass.dll
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\Basklass\bin\Debug\Basklass.pdb
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\Basklass\obj\Debug\ToDoList.csprojResolveAssemblyReference.cache
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\Basklass\obj\Debug\Basklass.dll
+C:\Users\simon\Documents\Visual Studio 2015\Projects\BackendProjektG11\Basklass\obj\Debug\Basklass.pdb
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\Basklass\bin\Debug\Basklass.dll
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\Basklass\bin\Debug\Basklass.pdb
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\Basklass\obj\Debug\ToDoList.csprojResolveAssemblyReference.cache
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\Basklass\obj\Debug\Basklass.dll
+C:\Users\lucian.IRC\Downloads\Uppgifter\BackendProjektG11 (2)(1)\BackendProjektG11\Basklass\obj\Debug\Basklass.pdb
+D:\2015-12-19\Downloads\BackendProjektG11-GetFinishedItemsList\BackendProjektG11-GetFinishedItemsList\Basklass\bin\Debug\Basklass.dll
+D:\2015-12-19\Downloads\BackendProjektG11-GetFinishedItemsList\BackendProjektG11-GetFinishedItemsList\Basklass\bin\Debug\Basklass.pdb
+D:\2015-12-19\Downloads\BackendProjektG11-GetFinishedItemsList\BackendProjektG11-GetFinishedItemsList\Basklass\obj\Debug\Basklass.dll
+D:\2015-12-19\Downloads\BackendProjektG11-GetFinishedItemsList\BackendProjektG11-GetFinishedItemsList\Basklass\obj\Debug\Basklass.pdb
