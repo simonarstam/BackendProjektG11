@@ -49,6 +49,18 @@
   <wsdl:message name="IService1_checkIfListExist_OutputMessage">
     <wsdl:part name="parameters" element="tns:checkIfListExistResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_UpdateToDo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateToDo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateToDo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateToDoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ImportantItemsToDo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportantItemsToDo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ImportantItemsToDo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportantItemsToDoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="getTheListString">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getTheListString" message="tns:IService1_getTheListString_InputMessage" />
@@ -77,6 +89,14 @@
     <wsdl:operation name="checkIfListExist">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/checkIfListExist" message="tns:IService1_checkIfListExist_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/checkIfListExistResponse" message="tns:IService1_checkIfListExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateToDo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateToDo" message="tns:IService1_UpdateToDo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateToDoResponse" message="tns:IService1_UpdateToDo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportantItemsToDo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ImportantItemsToDo" message="tns:IService1_ImportantItemsToDo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ImportantItemsToDoResponse" message="tns:IService1_ImportantItemsToDo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -137,6 +157,24 @@
     </wsdl:operation>
     <wsdl:operation name="checkIfListExist">
       <soap:operation soapAction="http://tempuri.org/IService1/checkIfListExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateToDo">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateToDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportantItemsToDo">
+      <soap:operation soapAction="http://tempuri.org/IService1/ImportantItemsToDo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

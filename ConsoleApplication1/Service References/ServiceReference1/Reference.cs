@@ -56,6 +56,18 @@ namespace ConsoleApplication1.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/checkIfListExist", ReplyAction="http://tempuri.org/IService1/checkIfListExistResponse")]
         System.Threading.Tasks.Task<bool> checkIfListExistAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateToDo", ReplyAction="http://tempuri.org/IService1/UpdateToDoResponse")]
+        bool UpdateToDo(int idUpdate, string descriptionUpdate, string nameUpdate, System.DateTime CreatedDateUpdate, System.DateTime dmUpdate, int estimationTimeUpdate, bool finnishedUpdate, string l_name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateToDo", ReplyAction="http://tempuri.org/IService1/UpdateToDoResponse")]
+        System.Threading.Tasks.Task<bool> UpdateToDoAsync(int idUpdate, string descriptionUpdate, string nameUpdate, System.DateTime CreatedDateUpdate, System.DateTime dmUpdate, int estimationTimeUpdate, bool finnishedUpdate, string l_name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ImportantItemsToDo", ReplyAction="http://tempuri.org/IService1/ImportantItemsToDoResponse")]
+        string[] ImportantItemsToDo(string l_name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ImportantItemsToDo", ReplyAction="http://tempuri.org/IService1/ImportantItemsToDoResponse")]
+        System.Threading.Tasks.Task<string[]> ImportantItemsToDoAsync(string l_name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -139,6 +151,22 @@ namespace ConsoleApplication1.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> checkIfListExistAsync(string name) {
             return base.Channel.checkIfListExistAsync(name);
+        }
+        
+        public bool UpdateToDo(int idUpdate, string descriptionUpdate, string nameUpdate, System.DateTime CreatedDateUpdate, System.DateTime dmUpdate, int estimationTimeUpdate, bool finnishedUpdate, string l_name) {
+            return base.Channel.UpdateToDo(idUpdate, descriptionUpdate, nameUpdate, CreatedDateUpdate, dmUpdate, estimationTimeUpdate, finnishedUpdate, l_name);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateToDoAsync(int idUpdate, string descriptionUpdate, string nameUpdate, System.DateTime CreatedDateUpdate, System.DateTime dmUpdate, int estimationTimeUpdate, bool finnishedUpdate, string l_name) {
+            return base.Channel.UpdateToDoAsync(idUpdate, descriptionUpdate, nameUpdate, CreatedDateUpdate, dmUpdate, estimationTimeUpdate, finnishedUpdate, l_name);
+        }
+        
+        public string[] ImportantItemsToDo(string l_name) {
+            return base.Channel.ImportantItemsToDo(l_name);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> ImportantItemsToDoAsync(string l_name) {
+            return base.Channel.ImportantItemsToDoAsync(l_name);
         }
     }
 }

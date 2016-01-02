@@ -8,3 +8,13 @@ D:\2015-12-19\Downloads\BackendProjektG11-GetFinishedItemsList\BackendProjektG11
 D:\2015-12-19\Downloads\BackendProjektG11-GetFinishedItemsList\BackendProjektG11-GetFinishedItemsList\ConsoleApplication2\obj\Debug\ConsoleApplication2.csprojResolveAssemblyReference.cache
 D:\2015-12-19\Downloads\BackendProjektG11-GetFinishedItemsList\BackendProjektG11-GetFinishedItemsList\ConsoleApplication2\obj\Debug\ConsoleApplication2.exe
 D:\2015-12-19\Downloads\BackendProjektG11-GetFinishedItemsList\BackendProjektG11-GetFinishedItemsList\ConsoleApplication2\obj\Debug\ConsoleApplication2.pdb
+D:\Git\BackendProjektG11\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe.config
+D:\Git\BackendProjektG11\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe
+D:\Git\BackendProjektG11\ConsoleApplication2\bin\Debug\ConsoleApplication2.pdb
+D:\Git\BackendProjektG11\ConsoleApplication2\bin\Debug\Basklass.dll
+D:\Git\BackendProjektG11\ConsoleApplication2\bin\Debug\ClassLibrary1.dll
+D:\Git\BackendProjektG11\ConsoleApplication2\bin\Debug\Basklass.pdb
+D:\Git\BackendProjektG11\ConsoleApplication2\bin\Debug\ClassLibrary1.pdb
+D:\Git\BackendProjektG11\ConsoleApplication2\obj\Debug\ConsoleApplication2.csprojResolveAssemblyReference.cache
+D:\Git\BackendProjektG11\ConsoleApplication2\obj\Debug\ConsoleApplication2.exe
+D:\Git\BackendProjektG11\ConsoleApplication2\obj\Debug\ConsoleApplication2.pdb

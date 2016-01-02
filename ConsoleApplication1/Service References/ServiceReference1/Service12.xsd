@@ -104,4 +104,39 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateToDo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idUpdate" type="xs:int" />
+        <xs:element minOccurs="0" name="descriptionUpdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nameUpdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CreatedDateUpdate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dmUpdate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="estimationTimeUpdate" type="xs:int" />
+        <xs:element minOccurs="0" name="finnishedUpdate" type="xs:boolean" />
+        <xs:element minOccurs="0" name="l_name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateToDoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateToDoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportantItemsToDo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="l_name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImportantItemsToDoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ImportantItemsToDoResult" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

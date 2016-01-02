@@ -13,7 +13,7 @@ namespace ConsoleApplication1
         //private string m_errorMsg;
 
         /// <summary>
-        /// Print menu.
+        /// Print menu. 
         /// </summary>
         private void printMenu()
         {
@@ -22,6 +22,8 @@ namespace ConsoleApplication1
             Console.WriteLine("3. Remove");
             Console.WriteLine("4. Get the number of finished or unfinished toDos");
             Console.WriteLine("5. Show the list with the finished items");
+            Console.WriteLine("6. Update items");
+            Console.WriteLine("7. List with important items");
         }
 
         /// <summary>
@@ -54,6 +56,13 @@ namespace ConsoleApplication1
                     case "5":
                         finishedList();
                         break;
+                    case "6":
+                        UpdateToDo();
+                        break;
+                    case "7":
+                        ImportantList();
+                        break;
+                        
                     default:
                         Console.WriteLine("Invalid choice...");
                         break;
@@ -191,6 +200,47 @@ namespace ConsoleApplication1
             }
         }
 
+
+        private void UpdateToDo()
+        {
+            int idUpdate = Utilities.getInputInt("Select ID (positive number above 0).", "Invalid input! It has to be a positive number above 0.");
+            string descriptionUpdate = Utilities.getInputString("What do you want to do? (ex. \"do laundry\" or \"do laundry, do dishes\" will create multiple list items)");
+            string nameUpdate = Utilities.getInputString("Who is going to do the task? (ex. Anna)");
+            int estimationTimeUpdate = Utilities.getInputTime("How long time is the task going to take (in minutes)?", "It has to be a positive number!");
+            int yearUpdate = Utilities.getInputYear("When should the task be done? Year", "It has to be a number between 0 and 9999!");
+            int monthUpdate = Utilities.getInputMonth("When should the task be done? Month", "It has to be a number between 1 and 12");
+            int dayUpdate = Utilities.getInputDay("When should the task be done? Day", "It has to be a number between 1 and 31");
+
+            DateTime time = DateTime.Now;
+            DateTime dmUpdate = new DateTime();
+            bool datetime_ok = false;
+            while (!datetime_ok)
+            {
+                try
+                {
+                    
+                    dmUpdate = new DateTime(yearUpdate, monthUpdate, dayUpdate, time.Hour, time.Minute, time.Second);
+                    datetime_ok = true;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid date! Please try again.");
+                    yearUpdate = Utilities.getInputYear("When should the task be done? Year", "It has to be a number between 0 and 9999!");
+                    monthUpdate = Utilities.getInputMonth("When should the task be done? Month", "It has to be a number between 1 and 12");
+                    dayUpdate = Utilities.getInputDay("When should the task be done? Day", "It has to be a number between 1 and 31");
+                }
+            }
+
+            bool finnishedUpdate = Utilities.getInputBooleanFromNumber("Is the task finished or not? (1 for true and 0 for false)",
+                "Incorrect input. The value has to be 0 or 1.");
+            DateTime createdDateUpdate = System.DateTime.Now;
+
+            client.UpdateToDo(idUpdate, descriptionUpdate, nameUpdate, createdDateUpdate, dmUpdate, estimationTimeUpdate, finnishedUpdate, l_name);
+
+        }
+
+        
+
         /// <summary>
         /// removes a ToDo
         /// </summary>
@@ -198,10 +248,25 @@ namespace ConsoleApplication1
         {
             int id = Utilities.getInputInt("Select ID (positive number above 0).", "Invalid input! It has to be a positive number above 0.");
 
-            if (client.removeToDo(id, l_name))
-                Console.WriteLine("The task which had ID \"" + id + "\" from tasklist \"" + l_name + "\" is now deleted!");
-            else
-                Console.WriteLine("The selected task ID couldn't get deleted or couldn't be found.");
+            //Console.WriteLine("/n1. Remove items");
+            //Console.WriteLine("2. Set item to done");
+
+            //string choice = Console.ReadLine();
+            //switch (choice)
+            //{
+            //    case "1":
+                    if (client.removeToDo(id, l_name))
+                        Console.WriteLine("The task which had ID \"" + id + "\" from tasklist \"" + l_name + "\" is now deleted!");
+                    else
+                        Console.WriteLine("The selected task ID couldn't get deleted or couldn't be found.");
+            //        break;
+
+            //    case "2":
+
+            //        break;
+            //}
+
+           
         }
 
         /// <summary>
@@ -227,6 +292,19 @@ namespace ConsoleApplication1
             }
             else
                 Console.WriteLine("There is no finished tasks in the list.");
+
+        }
+
+        public void ImportantList()
+        {
+            string[] tdl = client.ImportantItemsToDo(l_name);
+            if (tdl.Count() > 0)
+            {
+                foreach (string s in tdl)
+                    Console.WriteLine(s);
+            }
+            else
+                Console.WriteLine("There are no important tasks in the list.");
 
         }
     }

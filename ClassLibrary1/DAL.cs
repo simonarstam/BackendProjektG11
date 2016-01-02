@@ -13,7 +13,7 @@ namespace DAL
         private SqlCommand command;
         private static List<ToDo> toDoList;
 
-        private static List<ListName> listName; // Added
+        //private static List<ListName> listName; // Added
 
         public DAL(string _connString)
         {
@@ -64,18 +64,20 @@ namespace DAL
                 ErrorMessage = ex.Message;
             }
         }
+
         /// <summary>
         /// Update ToDo
         /// </summary>
         /// <param name="toDo"></param>
-        public void UpdateToDoList(ToDo toDo)
+        public void UpdateToDoList(ToDo toDo, string l_name)
         {
             try
             {
+                int l_id = GetListIDByListName(l_name);
                 using (conn)
                 {
                     string sqlUpdateString =
-                    "UPDATE ToDoList SET Description=@description, Name=@name, CreatedDate=@createdDate, DeadLine=@deadLine, EstimationTime=@estimationTime, Finnished=@finnished WHERE ID=" + toDo.Id;
+                    "UPDATE ToDoList2 SET Description=@description, Name=@name, CreatedDate=@createdDate, DeadLine=@deadLine, EstimationTime=@estimationTime, Finnished=@finnished WHERE ID=" + toDo.Id + " AND L_ID = @l_id";
 
                     conn = new SqlConnection(connString);
 
@@ -90,8 +92,9 @@ namespace DAL
                     SqlParameter deadLineParam = new SqlParameter("@deadLine", toDo.DeadLine);
                     SqlParameter estimateParam = new SqlParameter("@EstimationTime", toDo.EstimationTime);
                     SqlParameter flagParam = new SqlParameter("@finnished", toDo.Finnished ? 1 : 0);
+                    SqlParameter lIdParam = new SqlParameter("@l_id", l_id);
 
-                    command.Parameters.AddRange(new SqlParameter[] { descriptionParam, userParam, createdParam, deadLineParam, estimateParam, flagParam });
+                    command.Parameters.AddRange(new SqlParameter[] { descriptionParam, userParam, createdParam, deadLineParam, estimateParam, flagParam, lIdParam});
                     command.ExecuteNonQuery();
                     command.Connection.Close();
                 }

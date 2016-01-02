@@ -35,6 +35,12 @@ namespace WcfService1
         [OperationContract]
         bool checkIfListExist(string name);
 
+        [OperationContract]
+        bool UpdateToDo(int idUpdate, string descriptionUpdate, string nameUpdate, DateTime CreatedDateUpdate, DateTime dmUpdate, int estimationTimeUpdate, bool finnishedUpdate, string l_name);
+
+        [OperationContract]
+        string[] ImportantItemsToDo(string l_name);
+
 
 
     }

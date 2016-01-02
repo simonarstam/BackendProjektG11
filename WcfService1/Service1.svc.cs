@@ -29,7 +29,7 @@ namespace WcfService1
 
 
 
-            //theToDoList = theToDoList.OrderBy(x => x.DeadLine).ToList();
+            theToDoList = theToDoList.OrderBy(x => x.DeadLine).ToList();
             //
 
             List<string> temp = new List<string>();
@@ -117,13 +117,33 @@ namespace WcfService1
             List<string> listToArray = new List<string>();
             foreach (ToDoList.ToDo td in finishedItems) 
                 {
+               
                     listToArray.Add(td.Id + " " + td.Description + " " + td.Name + " " + td.CreatedDate + " " + td.DeadLine + " " + td.EstimationTime + " " + td.Finnished);
+                
                 }
             return listToArray.ToArray();
             
 
         }
 
+        public string[] ImportantItemsToDo(string l_name)
+        {
+            List<ToDoList.ToDo> theToDoList = new List<ToDoList.ToDo>();
+            theToDoList = dal.GetToDoListByListName(l_name);
+            List<ToDoList.ToDo> finishedItems = theToDoList.FindAll(finished => finished.Finnished);
+
+            List<string> listToArray = new List<string>();
+            foreach (ToDoList.ToDo td in finishedItems)
+            {
+                string important = td.Name.Substring(td.Name.Length - 1, 1); 
+                if (  (important == "!"))
+                {
+                    listToArray.Add(td.Id + " " + td.Description + " " + td.Name + " " + td.CreatedDate + " " + td.DeadLine + " " + td.EstimationTime + " " + td.Finnished);
+                }
+            }
+            return listToArray.ToArray();
+
+        }
         public int[] GetListFinishedAndUnfinished(string l_name)
         {
             List<ToDoList.ToDo> theToDoList = new List<ToDoList.ToDo>();
@@ -154,6 +174,49 @@ namespace WcfService1
             dal.AddList(name);             
 
           //  response = "Sucessful!";
+            return true;
+        }
+
+        public bool UpdateToDo(int idUpdate, string descriptionUpdate, string nameUpdate, DateTime CreatedDateUpdate, DateTime dmUpdate, int estimationTimeUpdate, bool finnishedUpdate, string l_name)
+        {
+            try
+            {
+
+                //Console.Write("Select ID: ");
+                ToDoList.ToDo td = new ToDoList.ToDo();
+                td.Id = idUpdate;
+                td.Description = descriptionUpdate;
+                td.Name = nameUpdate;
+                td.DeadLine = dmUpdate;
+                td.CreatedDate = CreatedDateUpdate;
+                td.EstimationTime = estimationTimeUpdate;
+                td.Finnished = finnishedUpdate;
+
+                int count = dal.GetToDoList().Count();
+                //string choice = Console.ReadLine();
+                if (idUpdate < count)
+                {
+                    List<ToDoList.ToDo> temp = dal.GetToDoListById(idUpdate);
+
+                    if (temp.Count > 0)
+                    {
+                        dal.UpdateToDoList(td, l_name);
+                        Console.WriteLine(temp.ElementAt(0).Id + " has been updated.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nothing happend");
+                        return false;
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
             return true;
         }
     }
