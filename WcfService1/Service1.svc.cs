@@ -148,7 +148,7 @@ namespace WcfService1
         {
             List<ToDoList.ToDo> theToDoList = new List<ToDoList.ToDo>();
             theToDoList = dal.GetToDoListByListName(l_name);
-            List<ToDoList.ToDo> finishedItems = theToDoList.FindAll(finished => finished.Finnished);
+            List<ToDoList.ToDo> finishedItems = theToDoList.FindAll(finished => !finished.Finnished);
 
             int totalSumm = 0;
             foreach (ToDoList.ToDo td in finishedItems)

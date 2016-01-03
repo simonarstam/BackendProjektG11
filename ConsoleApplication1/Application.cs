@@ -315,12 +315,15 @@ namespace ConsoleApplication1
         public void SummaEstimationTime()
         {
             int  tdl = client.TotalEstimationsItemsToDo(l_name);
+            int daysEstimationTime = tdl / 3600;
+            int hoursEstimationTime = tdl / 60;
+            int minuteEstimationTime = tdl % 60;
             TimeSpan ts = TimeSpan.FromMinutes(tdl);
             DateTime date = DateTime.Now;
             DateTime finishedTime = date.Add(ts);
 
-            string txtDate = string.Format("\n  You will be done with your items in: {0} and the time will be {1}",
-                         new DateTime(ts.Ticks).ToString("HH:mm:ss"), finishedTime);
+            string txtDate = string.Format("\n  You will be done with your items in: {0} days {1} hours {2} minutes, and the time will be {3} when you are done with all items. ",
+                                            daysEstimationTime, hoursEstimationTime, minuteEstimationTime, finishedTime);
             Console.WriteLine(txtDate);
             //Console.WriteLine();
         }
