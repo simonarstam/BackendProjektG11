@@ -41,6 +41,9 @@ namespace WcfService1
         [OperationContract]
         string[] ImportantItemsToDo(string l_name);
 
+        [OperationContract]
+        int TotalEstimationsItemsToDo(string l_name);
+
 
 
     }

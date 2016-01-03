@@ -117,7 +117,7 @@ namespace WcfService1
             List<string> listToArray = new List<string>();
             foreach (ToDoList.ToDo td in finishedItems) 
                 {
-               
+                td.EstimationTime = td.EstimationTime++;
                     listToArray.Add(td.Id + " " + td.Description + " " + td.Name + " " + td.CreatedDate + " " + td.DeadLine + " " + td.EstimationTime + " " + td.Finnished);
                 
                 }
@@ -130,10 +130,9 @@ namespace WcfService1
         {
             List<ToDoList.ToDo> theToDoList = new List<ToDoList.ToDo>();
             theToDoList = dal.GetToDoListByListName(l_name);
-            List<ToDoList.ToDo> finishedItems = theToDoList.FindAll(finished => finished.Finnished);
 
             List<string> listToArray = new List<string>();
-            foreach (ToDoList.ToDo td in finishedItems)
+            foreach (ToDoList.ToDo td in theToDoList)
             {
                 string important = td.Name.Substring(td.Name.Length - 1, 1); 
                 if (  (important == "!"))
@@ -144,6 +143,24 @@ namespace WcfService1
             return listToArray.ToArray();
 
         }
+
+        public int TotalEstimationsItemsToDo(string l_name)
+        {
+            List<ToDoList.ToDo> theToDoList = new List<ToDoList.ToDo>();
+            theToDoList = dal.GetToDoListByListName(l_name);
+            List<ToDoList.ToDo> finishedItems = theToDoList.FindAll(finished => finished.Finnished);
+
+            int totalSumm = 0;
+            foreach (ToDoList.ToDo td in finishedItems)
+            {    
+                totalSumm += td.EstimationTime;
+            }
+
+            return totalSumm;
+
+
+        }
+
         public int[] GetListFinishedAndUnfinished(string l_name)
         {
             List<ToDoList.ToDo> theToDoList = new List<ToDoList.ToDo>();
@@ -180,9 +197,7 @@ namespace WcfService1
         public bool UpdateToDo(int idUpdate, string descriptionUpdate, string nameUpdate, DateTime CreatedDateUpdate, DateTime dmUpdate, int estimationTimeUpdate, bool finnishedUpdate, string l_name)
         {
             try
-            {
-
-                //Console.Write("Select ID: ");
+            {           
                 ToDoList.ToDo td = new ToDoList.ToDo();
                 td.Id = idUpdate;
                 td.Description = descriptionUpdate;
@@ -193,7 +208,6 @@ namespace WcfService1
                 td.Finnished = finnishedUpdate;
 
                 int count = dal.GetToDoList().Count();
-                //string choice = Console.ReadLine();
                 if (idUpdate < count)
                 {
                     List<ToDoList.ToDo> temp = dal.GetToDoListById(idUpdate);

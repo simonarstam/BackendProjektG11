@@ -24,6 +24,7 @@ namespace ConsoleApplication1
             Console.WriteLine("5. Show the list with the finished items");
             Console.WriteLine("6. Update items");
             Console.WriteLine("7. List with important items");
+            Console.WriteLine("8. Total estimation time");
         }
 
         /// <summary>
@@ -62,7 +63,10 @@ namespace ConsoleApplication1
                     case "7":
                         ImportantList();
                         break;
-                        
+                    case "8":
+                        SummaEstimationTime();
+                        break;
+
                     default:
                         Console.WriteLine("Invalid choice...");
                         break;
@@ -307,5 +311,19 @@ namespace ConsoleApplication1
                 Console.WriteLine("There are no important tasks in the list.");
 
         }
+
+        public void SummaEstimationTime()
+        {
+            int  tdl = client.TotalEstimationsItemsToDo(l_name);
+            TimeSpan ts = TimeSpan.FromMinutes(tdl);
+            DateTime date = DateTime.Now;
+            DateTime finishedTime = date.Add(ts);
+
+            string txtDate = string.Format("\n  You will be done with your items in: {0} and the time will be {1}",
+                         new DateTime(ts.Ticks).ToString("HH:mm:ss"), finishedTime);
+            Console.WriteLine(txtDate);
+            //Console.WriteLine();
+        }
+
     }
 }

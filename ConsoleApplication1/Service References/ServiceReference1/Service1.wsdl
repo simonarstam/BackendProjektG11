@@ -61,6 +61,12 @@
   <wsdl:message name="IService1_ImportantItemsToDo_OutputMessage">
     <wsdl:part name="parameters" element="tns:ImportantItemsToDoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_TotalEstimationsItemsToDo_InputMessage">
+    <wsdl:part name="parameters" element="tns:TotalEstimationsItemsToDo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TotalEstimationsItemsToDo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TotalEstimationsItemsToDoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="getTheListString">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getTheListString" message="tns:IService1_getTheListString_InputMessage" />
@@ -97,6 +103,10 @@
     <wsdl:operation name="ImportantItemsToDo">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ImportantItemsToDo" message="tns:IService1_ImportantItemsToDo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ImportantItemsToDoResponse" message="tns:IService1_ImportantItemsToDo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TotalEstimationsItemsToDo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TotalEstimationsItemsToDo" message="tns:IService1_TotalEstimationsItemsToDo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TotalEstimationsItemsToDoResponse" message="tns:IService1_TotalEstimationsItemsToDo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -175,6 +185,15 @@
     </wsdl:operation>
     <wsdl:operation name="ImportantItemsToDo">
       <soap:operation soapAction="http://tempuri.org/IService1/ImportantItemsToDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotalEstimationsItemsToDo">
+      <soap:operation soapAction="http://tempuri.org/IService1/TotalEstimationsItemsToDo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

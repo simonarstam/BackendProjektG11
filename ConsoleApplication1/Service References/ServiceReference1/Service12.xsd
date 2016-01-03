@@ -139,4 +139,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="TotalEstimationsItemsToDo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="l_name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TotalEstimationsItemsToDoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TotalEstimationsItemsToDoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

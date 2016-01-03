@@ -68,6 +68,12 @@ namespace ConsoleApplication1.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ImportantItemsToDo", ReplyAction="http://tempuri.org/IService1/ImportantItemsToDoResponse")]
         System.Threading.Tasks.Task<string[]> ImportantItemsToDoAsync(string l_name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TotalEstimationsItemsToDo", ReplyAction="http://tempuri.org/IService1/TotalEstimationsItemsToDoResponse")]
+        int TotalEstimationsItemsToDo(string l_name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TotalEstimationsItemsToDo", ReplyAction="http://tempuri.org/IService1/TotalEstimationsItemsToDoResponse")]
+        System.Threading.Tasks.Task<int> TotalEstimationsItemsToDoAsync(string l_name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -167,6 +173,14 @@ namespace ConsoleApplication1.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string[]> ImportantItemsToDoAsync(string l_name) {
             return base.Channel.ImportantItemsToDoAsync(l_name);
+        }
+        
+        public int TotalEstimationsItemsToDo(string l_name) {
+            return base.Channel.TotalEstimationsItemsToDo(l_name);
+        }
+        
+        public System.Threading.Tasks.Task<int> TotalEstimationsItemsToDoAsync(string l_name) {
+            return base.Channel.TotalEstimationsItemsToDoAsync(l_name);
         }
     }
 }
