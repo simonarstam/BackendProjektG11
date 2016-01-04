@@ -315,8 +315,8 @@ namespace ConsoleApplication1
         public void SummaEstimationTime()
         {
             int  tdl = client.TotalEstimationsItemsToDo(l_name);
-            int daysEstimationTime = tdl / 3600;
-            int hoursEstimationTime = tdl / 60;
+            int daysEstimationTime = tdl / 1440;
+            int hoursEstimationTime = (tdl % 1440) / 60;
             int minuteEstimationTime = tdl % 60;
             TimeSpan ts = TimeSpan.FromMinutes(tdl);
             DateTime date = DateTime.Now;
